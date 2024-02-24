@@ -69,7 +69,7 @@ function image_resize($image_type_id, $img_width, $img_height) {
 
         if(isset($_SESSION['role'])){
             $action = 'Added Announcement titled '.$_POST['ann_title'];
-            $iquery = mysqli_query($con,"INSERT INTO tbllogs (userid,user,username,logdate,action) values ('".$_SESSION['userid']."', '".$_SESSION['role']."','".$_SESSION['username']."',  NOW(), '".$action."')");
+            $iquery = mysqli_query($con,"INSERT INTO tbllogs (id,user,logdate,action) values ('".$_SESSION['userid']."', '".$_SESSION['role']."',  NOW(), '".$action."')");
         }
 
         
@@ -187,7 +187,7 @@ if (isset($_POST['update_announcement'])) {
     $tbl_announcement = mysqli_query($con,"UPDATE tbl_announcement set ann_title = '".$_POST["ann_title"]."', ann_description = '".$_POST["ann_description"]."', ann_images = '".$ann_images."'  WHERE announce_id = '".$_POST["announce_id"]."' ");
     if(isset($_SESSION['role'])){
         $action = 'Updated Announcement titled '.$_POST["ann_title"];
-        $iquery = mysqli_query($con,"INSERT INTO tbllogs (userid,user,username,logdate,action) values ('".$_SESSION['userid']."', '".$_SESSION['role']."','".$_SESSION['username']."',  NOW(), '".$action."')");
+        $iquery = mysqli_query($con,"INSERT INTO tbllogs (id,user,logdate,action) values ('".$_SESSION['userid']."', '".$_SESSION['role']."',  NOW(), '".$action."')");
     }
     
             if ($tbl_announcement) {
@@ -199,7 +199,7 @@ if (isset($_POST['update_announcement'])) {
                 </div>';
     
                 header('Location: announcement.php');
-             
+                
     
             }else{
     

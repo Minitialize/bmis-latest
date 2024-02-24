@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 if(isset($_POST['btn_add'])){
     $txt_cnum = $_POST['txt_cnum'];
     $ddl_resident = $_POST['ddl_resident'];
@@ -18,7 +18,7 @@ if(isset($_POST['btn_add'])){
         $iquery = mysqli_query($con,"INSERT INTO tbllogs (userid,user,username,logdate,action) values ('".$_SESSION['userid']."', '".$_SESSION['role']."','".$_SESSION['username']."',  NOW(), '".$action."')");
     }
     
-
+    
     if($num_rows == 0){
         if($_SESSION['role'] == "Administrator"){
         $query = mysqli_query($con,"INSERT INTO tblclearance (clearanceNo,residentid,findings,purpose,orNo,samount,dateRecorded,recordedBy,status) 

@@ -126,7 +126,7 @@ if ($_SESSION['role'] == "Administrator") {
                             </div>
                             <li>
                                 <a href="../zone/zone.php">
-                                    <i class="fa fa-user"></i> <span>Zone Leader</span>
+                                    <i class="fa fa-user"></i> <span>Barangay Staff</span>
                                 </a>
                             </li>
                              <div style = "display:none">

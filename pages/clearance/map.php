@@ -39,10 +39,25 @@ if (!isset($_SESSION['role'])) {
                     <div id='map' style='width: 100%; height: 70vh;'></div>
                     <script>
                     mapboxgl.accessToken = 'pk.eyJ1IjoiY29ucmFkNjE5IiwiYSI6ImNsbDU5bG5vODBneHczZmxvdnR1N21kdHEifQ.nb9wheVK-HBsz01DifodWg';
+                    //'sk.eyJ1IjoiY2xicHVnYSIsImEiOiJjbHN0eWpsZHAwMG14MmtxazdjbWFwcGNhIn0.ywG5uWznarz3hHpU_rijJA';
+                    //'pk.eyJ1IjoiY29ucmFkNjE5IiwiYSI6ImNsbDU5bG5vODBneHczZmxvdnR1N21kdHEifQ.nb9wheVK-HBsz01DifodWg';
                     var map = new mapboxgl.Map({
                         container: 'map',
-                        style: 'mapbox://styles/mapbox/streets-v11'
+                        style: 'mapbox://styles/mapbox/streets-v12',
+                        center: [125.54548960362786,7.076370001485557], // starting position
+                        zoom: 15
+
+
                     });
+                    /*const bounds = [
+                        [-73.990593, 40.740121],
+                        [-73.990593, 40.740121]
+                    ];
+                    map.setMaxBounds(bounds);*/
+
+                    // an arbitrary start will always be the same
+                    // only the end or destination will change
+                    const start = [125.54548960362786,7.076370001485557];
                     </script>
 
                     <!-- end map box -->

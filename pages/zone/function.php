@@ -14,7 +14,6 @@ if(isset($_POST['btn_add'])){
     $txt_position = $_POST['txt_position'];
     $txt_emcontactno = $_POST['txt_emcontactno'];
 
-
     // if(isset($_SESSION['role'])){
     //     $action = 'Added Zone number '.$txt_zone;
     //     $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
@@ -34,6 +33,7 @@ if(isset($_POST['btn_add'])){
         if(isset($_SESSION['role'])){
             $action = 'Added Zone number '.$txt_zone;
             $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
+            //id, '".$_SESSION["id"]."',
         }
     }
     else{

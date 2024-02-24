@@ -21,7 +21,7 @@ session_start();
                 <img src="../../img/logo-removebg-preview.png" style="height:110px;"/>
               <h3 class="panel-title">
                 <strong>
-                    Barangay Zone Leader
+                    Barangay Staff Side
                 </strong>
               </h3>
             </div>
