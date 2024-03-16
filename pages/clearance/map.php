@@ -38,7 +38,7 @@ if (!isset($_SESSION['role'])) {
                     <!-- start map box -->
                     <div id='map' style='width: 100%; height: 70vh;'></div>
                     <script>
-                    mapboxgl.accessToken = 'pk.eyJ1IjoiY29ucmFkNjE5IiwiYSI6ImNsbDU5bG5vODBneHczZmxvdnR1N21kdHEifQ.nb9wheVK-HBsz01DifodWg';
+                    mapboxgl.accessToken = 'sk.eyJ1IjoiY2xicHVnYSIsImEiOiJjbHN0eWpsZHAwMG14MmtxazdjbWFwcGNhIn0.ywG5uWznarz3hHpU_rijJA';
                     //'sk.eyJ1IjoiY2xicHVnYSIsImEiOiJjbHN0eWpsZHAwMG14MmtxazdjbWFwcGNhIn0.ywG5uWznarz3hHpU_rijJA';
                     //'pk.eyJ1IjoiY29ucmFkNjE5IiwiYSI6ImNsbDU5bG5vODBneHczZmxvdnR1N21kdHEifQ.nb9wheVK-HBsz01DifodWg';
                     var map = new mapboxgl.Map({
@@ -46,9 +46,48 @@ if (!isset($_SESSION['role'])) {
                         style: 'mapbox://styles/mapbox/streets-v12',
                         center: [125.54548960362786,7.076370001485557], // starting position
                         zoom: 15
-
+                        
 
                     });
+                    const geojson = {
+                        type: 'FeatureCollection',
+                        features: [
+                            {
+                                type: 'Feature',
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: [-77.032, 38.913]
+                                },
+                                properties: {
+                                    title: 'Mapbox',
+                                    description: 'test123'
+                                }
+                            },
+                            {
+                                type: 'Feature',
+                                geometry: {
+                                type: 'Point',
+                                coordinates: [-122.414, 37.776]
+                            },
+                            properties: {
+                                title: 'Mapbox',
+                                description: 'test3, test4'
+                            }
+    }
+  ]
+};
+                    
+                    // geolocation for mapbox
+                    /*map.addControl(
+                        new mapboxgl.GeolocateControl({
+                        positionOptions: {
+                        enableHighAccuracy: true
+                    },
+                    trackUserLocation: true
+                        },
+                        ),'bottom-right'
+                    );*/
+                    
                     /*const bounds = [
                         [-73.990593, 40.740121],
                         [-73.990593, 40.740121]

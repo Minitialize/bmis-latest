@@ -71,8 +71,24 @@ function myFunction_show() {
                   $_SESSION['role'] = "Zone Leader";
                   $_SESSION['userid'] = $row['id'];
                   $_SESSION['username'] = $row['username'];
-                }    
-                header ('location: ../clearance/clearance.php');
+                  $_SESSION['position'] = $row['position'];
+
+                  switch($_SESSION['position']){
+                    case 'level1':
+                      header ('location: ../clearance/clearance.php');
+                      break;
+                    case 'level2':
+                      header ('location: ../clearance/announcement.php');
+                      break;
+                    case 'level3':
+                      header ('location: ../clearance/complaints.php');
+                      break;
+                    default:
+                      header ('location: ../clearance/clearance.php');
+                  }   
+                }
+                 
+                
             }
             else
             {

@@ -38,7 +38,48 @@ if(isset($_POST['btn_add'])){
         $_SESSION['duplicate'] = 1;
         header ("location: ".$_SERVER['REQUEST_URI']);
     }
+} 
+
+// add modal for editing household member
+
+if(isset($_POST['btn_add'])){
+    $household_id = $_POST['household_id'];
+    $f_name = $_POST['f_name'];
+    $l_name = $_POST['l_name'];
+    $m_name = $_POST['m_name'];
+    $hmemberb_date = $_POST['hmemberb_date'];
+    $hmember_relationship = $_POST['hmember_relationship'];
+    $hmember_occupation = $_POST['hmember_occupation'];
+
+    // if(isset($_SESSION['role'])){
+    //     $action = 'Added Zone number '.$txt_zone;
+    //     $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
+    // }
+
+    $su = mysqli_query($con,"SELECT * from tblzone where username = '".$txt_uname."' ");
+    $ct = mysqli_num_rows($su);
+
+    if($ct == 0){
+        $query = mysqli_query($con,"INSERT INTO tbl_resident_house_member (zone,username,password,zone_name,zone_birthday,zone_address,bcontactno,position,emcontactno) 
+            values ('$household_id', '$f_name', '$l_name', '$m_name', '$hmemberb_date', '$hmember_relationship', '$hmember_occupation')") or die('Error: ' . mysqli_error($con));
+        if($query == true)
+        {
+            $_SESSION['added'] = 1;
+            header ("location: zone.php");
+        } 
+        if(isset($_SESSION['role'])){
+            $action = 'Added Zone number '.$txt_zone;
+            $iquery = mysqli_query($con,"INSERT INTO tbllogs (user,logdate,action) values ('".$_SESSION['role']."', NOW(), '".$action."')");
+            //id, '".$_SESSION["id"]."',
+        }
+    }
+    else{
+        $_SESSION['duplicateuser'] = 1;
+        header ("location: zone.php");
+    } 
 }
+
+// end modal
 
 if(isset($_POST['btn_req'])){
     $chkblot = mysqli_query($con,"select * from tblresident where '".$_SESSION['userid']."' not in (select complainant from tblblotter)");

@@ -176,7 +176,38 @@ if ($_SESSION['role'] == "Administrator") {
                             
                     </ul>';
 } elseif ($_SESSION['role'] == "Zone Leader") {
-    echo '
+    if ($_SESSION['position'] == "level1"){
+        echo '
+                            <ul class="sidebar-menu">
+                                <li>
+                                    <a href="../clearance/clearance.php">
+                                        <i class="fa fa-file"></i> <span>Request Form</span>
+                                    </a>
+                                </li>
+                            </ul>
+        ';
+    } elseif ($_SESSION['position'] == "level2"){
+        echo '
+                            <ul class="sidebar-menu">
+                                <li>
+                                    <a href="../clearance/announcement.php">
+                                    <i class="fa fa-bullhorn" aria-hidden="true"></i> <span>Announcement</span>
+                                    </a>
+                                </li>
+                            </ul>
+        ';
+    } elseif ($_SESSION['position'] == "level3"){
+        echo '
+                            <ul class="sidebar-menu">
+                                <li>
+                                    <a href="../clearance/complaints.php">
+                                    <i class="fa fa-warning" aria-hidden="true"></i> <span>Complaints</span>
+                                    </a>
+                                </li>
+                            </ul>
+        ';
+    } else{
+        echo '
                         <ul class="sidebar-menu">
                            <!-- <li>
                                 <a href="../permit/permit.php">
@@ -213,6 +244,9 @@ if ($_SESSION['role'] == "Administrator") {
                         </li>
 
                         </ul>';
+    }
+    
+    
 } elseif (isset($_SESSION['staff'])) {
     echo '
                         <ul class="sidebar-menu">

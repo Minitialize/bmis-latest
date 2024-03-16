@@ -584,6 +584,9 @@ $('#status_signup').on('change', function() {
 </form>
                         
 
+
+
+
                         
                         <section class="content-header" style = "display:none" >
                             <h3>

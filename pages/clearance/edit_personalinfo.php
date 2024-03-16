@@ -75,10 +75,10 @@ session_start();
     WHERE resident_id = '".$_POST["resident_id"]."' 
     ");
     
-    if(isset($_SESSION['role'])){
+    /*if(isset($_SESSION['role'])){
         $action = 'Updated profile resident with  id '. $row['resident_id'];
-        $iquery = mysqli_query($con,"INSERT INTO tbllogs (userid,user,username,logdate,action) values ('".$_SESSION['userid']."', '".$_SESSION['role']."','".$_SESSION['username']."',  NOW(), '".$action."')");
-     }
+        $iquery = mysqli_query($con,"INSERT INTO tbllogs (id,user,username,logdate,action) values ('".$_SESSION['resident_id']."', '".$_SESSION['role']."','".$_SESSION['username']."',  NOW(), '".$action."')");
+     }*/
 
 
     if ($update_profile) {
@@ -102,6 +102,9 @@ session_start();
       header('Location: myprofile.php?ID='.$_POST['resident_id'].'');
 
     }
+    
+ }
+ if(isset($_POST["hmupdate_save"])){
     
  }
 

@@ -57,3 +57,57 @@
               </div>
               </form>
             </div>
+
+            <div id="addHouseholdModal" class ="modal fade">
+            <form method="post">
+              <div class="modal-dialog modal-sm" style="width:300px !important;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Manage Household</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>First Name:</label>
+                                    <input name="txt_zone" class="form-control input-sm" type="text" placeholder="Zone #"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Middle Name:</label>
+                                    <input name="txt_uname" class="form-control input-sm" id="username" type="text" placeholder="Username"/>
+                                    <label id="user_msg" style="color:#CC0000;" ></label>
+                                </div>
+                                <div class="form-group">     <!-- not finished yet -->
+                                    <label>Last Name:</label>
+                                    <input name="txt_pass" class="form-control input-sm" type="password" placeholder="*******"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Birth Date:</label>
+                                    <input name="txt_fullname" class="form-control input-sm" id="username" type="date" placeholder="Birth Date"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Relationship:</label>
+                                    <input name="txt_bday" class="form-control input-sm" id="username" type="text" placeholder="Relationship"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Occupation:</label>
+                                    <input name="txt_addr" class="form-control input-sm" id="username" type="text" placeholder="Occupation"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Status:</label>
+                                    <input name="txt_bcontactno" class="form-control input-sm" id="username" type="text" placeholder="Status"/>
+                                </div>
+                            </div> <!-- up to here -->
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default btn-sm" data-dismiss="modal" value="Cancel"/>
+                        <input type="submit" class="btn btn-primary btn-sm" name="btn_add2" value="Add" id="btn_add2"/>
+                    </div>
+                </div>
+              </div>
+              </form>
+            </div>

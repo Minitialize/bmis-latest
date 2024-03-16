@@ -772,23 +772,24 @@ CREATE TABLE `tbl_resident_house_member` (
   `hmemberb_date` varchar(300) NOT NULL,
   `hmember_relationship` varchar(300) NOT NULL,
   `hmember_occupation` varchar(300) NOT NULL,
-  `household_uk` varchar(300) NOT NULL
+  `household_uk` varchar(300) NOT NULL,
+  `hmember_status` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_resident_house_member`
 --
 
-INSERT INTO `tbl_resident_house_member` (`household_id`, `f_name`, `l_name`, `m_name`, `hmemberb_date`, `hmember_relationship`, `hmember_occupation`, `household_uk`) VALUES
-(23, 'Donalds', 'Perry', 'Bacua', '2006-12-16', 'Sister', 'Occ1', '241663324499'),
-(25, 'Fj ', 'Cruz', 'Moze', '2000-09-24', 'Brother1', 'Occu2', '141663405301'),
-(26, 'Justin', 'Bohannon', 'Luyao', '2000-10-01', 'Broher1', 'Programmer1', '561664595055'),
-(27, 'Peter_fname2', 'Peter_lname2', 'Peter_mname2', '2000-10-01', 'Broher2', 'Programmer2', '561664595055'),
-(28, 'Peter', 'Cayatano', 'Lost anges', '2000-10-01', 'Owner account', 'Software developer', '561664595055'),
-(29, 'Juan', 'Dela', 'Cruz', '2022-10-08', 'Owner account', 'Programmmer', '141663405301'),
-(31, 'Clays', 'Shaw', 'Luz', '1998-12-10', 'Brother', 'Seaman', '871665397706'),
-(32, 'Fletcher', 'Bridges', 'Luz', '1999-12-12', 'Eldest', 'Doctor', '871665397706'),
-(33, 'Denis', 'Preston', 'Luz', '2000-11-10', 'Owner account', 'Designer', '871665397706');
+INSERT INTO `tbl_resident_house_member` (`household_id`, `f_name`, `l_name`, `m_name`, `hmemberb_date`, `hmember_relationship`, `hmember_occupation`, `household_uk`, 'hmember_status') VALUES
+(23, 'Donalds', 'Perry', 'Bacua', '2006-12-16', 'Sister', 'Occ1', '241663324499', 'Alive'),
+(25, 'Fj ', 'Cruz', 'Moze', '2000-09-24', 'Brother1', 'Occu2', '141663405301', 'Alive'),
+(26, 'Justin', 'Bohannon', 'Luyao', '2000-10-01', 'Broher1', 'Programmer1', '561664595055', 'Alive'),
+(27, 'Peter_fname2', 'Peter_lname2', 'Peter_mname2', '2000-10-01', 'Broher2', 'Programmer2', '561664595055', 'Alive'),
+(28, 'Peter', 'Cayatano', 'Lost anges', '2000-10-01', 'Owner account', 'Software developer', '561664595055', 'Alive'),
+(29, 'Juan', 'Dela', 'Cruz', '2022-10-08', 'Owner account', 'Programmmer', '141663405301', 'Alive'),
+(31, 'Clays', 'Shaw', 'Luz', '1998-12-10', 'Brother', 'Seaman', '871665397706','Alive'),
+(32, 'Fletcher', 'Bridges', 'Luz', '1999-12-12', 'Eldest', 'Doctor', '871665397706', 'Alive'),
+(33, 'Denis', 'Preston', 'Luz', '2000-11-10', 'Owner account', 'Designer', '871665397706', 'Alive');
 
 -- --------------------------------------------------------
 

@@ -562,7 +562,19 @@ if (isset($_SESSION['message_userupdate'])) {
                                 ?>
 
                             </div>                                
-                      
+                            <div class="row">
+                            <div class="form-group col-md-12">
+
+                                <button onclick="popuponclick2()" type = "button" class = "btn btn-warning btn-block">EDIT HOUSEHOLD INFORMATION</button>
+
+                            </div>
+                        </div>
+                        <script type='text/javascript'>
+        
+                        function popuponclick2() {
+                        location.href = 'edit_myprofilehousehold.php?ID=<?= $row_user['household_member_uk']; ?>';
+                        }
+                        </script>
 
 <?php } ?>
 

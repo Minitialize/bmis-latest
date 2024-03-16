@@ -77,6 +77,7 @@ function myFunction_show() {
                   $_SESSION['role'] = "Administrator";
                   $_SESSION['userid'] = $row['id'];
                   $_SESSION['username'] = $row['username'];
+                  
                 }    
                 header ('location: pages/zone/zone.php');
             }
@@ -86,6 +87,7 @@ function myFunction_show() {
                   $_SESSION['role'] = "Zone Leader";
                   $_SESSION['userid'] = $row['id'];
                   $_SESSION['username'] = $row['username'];
+                  $_SESSION['position'] = $row['position'];
                 }    
                 header ('location: pages/clearance/clearance.php');
 

@@ -30,8 +30,8 @@
      ");
 
    if(isset($_SESSION['role'])){
-      $action = 'Updated profile resident house member with  id '. $row['household_id'];
-      $iquery = mysqli_query($con,"INSERT INTO tbllogs (userid,user,username,logdate,action) values ('".$_SESSION['userid']."', '".$_SESSION['role']."','".$_SESSION['username']."',  NOW(), '".$action."')");
+      /*$action = 'Updated profile resident house member with  id '. $row_user['household_id'];
+      $iquery = mysqli_query($con,"INSERT INTO tbllogs (id,username,logdate,action) values ('".$_SESSION['userid']."','".$_SESSION['username']."',  NOW(), '".$action."')");*/
    }
      
      if ($update_profile) {
